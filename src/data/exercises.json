@@ -1,0 +1,132 @@
+{
+  "exercises": [
+    {
+      "lang": "HTML",
+      "title": "Opgave 1: een menu",
+      "intro": "Alles staat nu tegen de linkerkant aan. Zet de lijst binnen de nav, en de links binnen de lijst.",
+      "hint": "De <ul> staat binnen <nav>, dus 1 stap in. Elke <li> staat binnen de <ul>, dus 2 stappen in. De </ul> staat recht onder de <ul>.",
+      "mess": "flat",
+      "code": [
+        "<nav>",
+        "  <ul>",
+        "    <li><a href=\"index.html\">Home</a></li>",
+        "    <li><a href=\"over.html\">Over ons</a></li>",
+        "    <li><a href=\"contact.html\">Contact</a></li>",
+        "  </ul>",
+        "</nav>"
+      ]
+    },
+    {
+      "lang": "HTML",
+      "title": "Opgave 2: het geraamte van een pagina",
+      "intro": "Head en body staan binnen html. Alles in de head en body schuift nog een stap verder.",
+      "hint": "<!DOCTYPE html> en <html> staan helemaal links. <head> en <body> 1 stap in. Wat daarbinnen staat (meta, title, h1, p) 2 stappen in.",
+      "mess": "random",
+      "code": [
+        "<!DOCTYPE html>",
+        "<html lang=\"nl\">",
+        "  <head>",
+        "    <meta charset=\"UTF-8\">",
+        "    <title>Mijn site</title>",
+        "  </head>",
+        "  <body>",
+        "    <h1>Welkom</h1>",
+        "    <p>Dit is mijn eerste pagina.</p>",
+        "  </body>",
+        "</html>"
+      ]
+    },
+    {
+      "lang": "CSS",
+      "title": "Opgave 3: twee CSS-regels",
+      "intro": "Nu CSS. De eigenschappen horen bij de selector erboven.",
+      "hint": "De selector (body, .knop) staat links. Elke eigenschap tussen { en } 1 stap in. De } staat weer helemaal links.",
+      "mess": "random",
+      "code": [
+        "body {",
+        "  margin: 0;",
+        "  font-family: Arial, sans-serif;",
+        "}",
+        "",
+        ".knop {",
+        "  padding: 10px 20px;",
+        "  background-color: #0077cc;",
+        "  color: white;",
+        "}"
+      ]
+    },
+    {
+      "lang": "HTML",
+      "title": "Opgave 4: een formulier",
+      "intro": "Een formulier met velden in div's. Let goed op welke sluit-tag bij welke open-tag hoort.",
+      "hint": "<form> links. De div's en de button 1 stap in. Label en input staan binnen een div, dus 2 stappen in.",
+      "mess": "random",
+      "code": [
+        "<form action=\"verstuur.php\" method=\"post\">",
+        "  <div class=\"veld\">",
+        "    <label for=\"naam\">Naam</label>",
+        "    <input type=\"text\" id=\"naam\" name=\"naam\">",
+        "  </div>",
+        "  <div class=\"veld\">",
+        "    <label for=\"email\">E-mail</label>",
+        "    <input type=\"email\" id=\"email\" name=\"email\">",
+        "  </div>",
+        "  <button type=\"submit\">Verstuur</button>",
+        "</form>"
+      ]
+    },
+    {
+      "lang": "CSS",
+      "title": "Opgave 5: een media query",
+      "intro": "De lastigste: CSS-regels binnen een media query. Hier zijn er twee niveaus.",
+      "hint": "@media staat links. De regels .container en .kaart daarbinnen 1 stap in. Hun eigenschappen 2 stappen in. De laatste } (van @media) staat helemaal links.",
+      "mess": "random",
+      "code": [
+        ".container {",
+        "  display: flex;",
+        "  gap: 16px;",
+        "}",
+        "",
+        "@media (max-width: 600px) {",
+        "  .container {",
+        "    flex-direction: column;",
+        "  }",
+        "",
+        "  .kaart {",
+        "    width: 100%;",
+        "  }",
+        "}"
+      ]
+    }
+  ],
+  "reflection": {
+    "neat": [
+      "<div class=\"profiel\">",
+      "  <img src=\"foto.jpg\" alt=\"Profielfoto\">",
+      "  <div class=\"info\">",
+      "    <h2>Sanne de Vries</h2>",
+      "    <p>Student Software Development</p>",
+      "    <ul class=\"skills\">",
+      "      <li>HTML</li>",
+      "      <li>CSS</li>",
+      "      <li>JavaScript</li>",
+      "    </ul>",
+      "  </div>",
+      "</div>"
+    ],
+    "messy": [
+      "<div class=\"profiel\">",
+      "<img src=\"foto.jpg\" alt=\"Profielfoto\">",
+      "    <div class=\"info\">",
+      "  <h2>Sanne de Vries</h2>",
+      "      <p>Student Software Development</p>",
+      " <ul class=\"skills\">",
+      "        <li>HTML</li>",
+      "<li>CSS</li>",
+      "     <li>JavaScript</li>",
+      "   </ul>",
+      "</div>",
+      "      </div>"
+    ]
+  }
+}

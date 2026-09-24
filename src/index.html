@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Netjes inspringen – HTML &amp; CSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- START -->
+  <section class="screen" id="s-start">
+    <div class="stairs" aria-hidden="true">
+      <div>&lt;les&gt;</div>
+      <div>  &lt;onderwerp&gt;</div>
+      <div>    <span class="hl">Netjes inspringen</span></div>
+      <div>  &lt;/onderwerp&gt;</div>
+      <div>&lt;/les&gt;</div>
+    </div>
+    <h1>Code die je in één oogopslag leest</h1>
+    <p>Hieronder krijg je vijf stukjes HTML en CSS die rommelig zijn ingesprongen. Jij zet de spaties goed. Klopt alles, dan ga je door naar de volgende opgave. Na de vijfde opgave wacht er een laatste vraag.</p>
+    <div class="card" style="margin-top:24px">
+      <h2 style="font-size:1.3rem">De regels</h2>
+      <p>Alles wat <em>binnen</em> een ander element staat, schuift één stap naar rechts. De sluit-tag staat op die manier recht onder de open-tag.</p>
+      <p>In CSS schuiven de eigenschappen tussen <code>{</code> en <code>}</code> één stap naar rechts. De sluitende <code>}</code> staat recht onder de selector.</p>
+      <p style="margin:0">Eén stap is 2 spaties (4 mag ook, als je het maar overal hetzelfde doet). Je past alleen spaties aan, de code zelf blijft hetzelfde.</p>
+    </div>
+    <div class="row">
+      <button class="btn" id="btn-start">Begin met opgave 1</button>
+    </div>
+  </section>
+
+  <!-- EXERCISE -->
+  <section class="screen" id="s-ex">
+    <div class="progress" id="progress"></div>
+    <span class="tag" id="ex-lang">HTML</span>
+    <h2 id="ex-title"></h2>
+    <p id="ex-intro"></p>
+    <div class="editor">
+      <div class="gutter" id="gutter" aria-hidden="true"></div>
+      <textarea class="code" id="code" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" aria-label="Code om in te laten springen"></textarea>
+    </div>
+    <p class="keys"><kbd>Tab</kbd> schuift de regel 2 spaties naar rechts, <kbd>Shift</kbd> + <kbd>Tab</kbd> terug naar links. Werkt ook met meerdere regels geselecteerd. Druk eerst <kbd>Esc</kbd> om met Tab de editor te verlaten.</p>
+    <div class="row">
+      <button class="btn" id="btn-check">Controleer</button>
+      <button class="btn secondary" id="btn-reset">Opnieuw beginnen met deze code</button>
+    </div>
+    <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+    <details class="hint"><summary>Ik kom er niet uit</summary><p id="ex-hint"></p></details>
+  </section>
+
+  <!-- REFLECTION -->
+  <section class="screen" id="s-reflect">
+    <div class="progress" id="progress2"></div>
+    <span class="tag">Reflectie</span>
+    <h2>Welke code zou jij liever tegenkomen?</h2>
+    <p>Twee versies van hetzelfde profielkaartje. Ze doen in de browser precies hetzelfde. Kies de versie die jij beter vindt en leg uit waarom.</p>
+    <div class="compare" id="compare"></div>
+    <label class="lbl" for="motivation">Waarom kies je deze versie?</label>
+    <textarea class="motivation" id="motivation" placeholder="Bijvoorbeeld: bij deze versie zie ik meteen..."></textarea>
+    <div class="count" id="count">Schrijf minimaal 10 woorden.</div>
+    <div class="row">
+      <button class="btn" id="btn-submit" disabled>Lever mijn keuze in</button>
+    </div>
+  </section>
+
+  <!-- WRONG CHOICE -->
+  <section class="screen" id="s-retry">
+    <div class="card">
+      <h2>Terug naar opgave 1</h2>
+      <p>Je koos de rommelige versie. Kijk nog eens naar die code: kun je zien in welke <code>&lt;div&gt;</code> de <code>&lt;ul&gt;</code> staat? En welke <code>&lt;/div&gt;</code> bij welke <code>&lt;div&gt;</code> hoort?</p>
+      <p>Bij de nette versie zie je dat meteen, zonder te tellen. Dat is precies waarom inspringen bestaat. Doe de opgaven nog een keer en let erop hoe snel je de structuur ziet als het klaar is.</p>
+      <div class="row"><button class="btn" id="btn-retry">Begin opnieuw bij opgave 1</button></div>
+    </div>
+  </section>
+
+  <!-- SURPRISE -->
+  <section class="screen" id="s-surprise">
+    <div class="card surprise">
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <h2>Je snapt waarom het netjes moet. Nu mag je het ook snel.</h2>
+      <p>Visual Studio Code kan een heel bestand in één keer netjes inspringen. Deze sneltoets heet <strong>Document opmaken</strong> (Format Document):</p>
+      <div class="shortcut" id="shortcut"></div>
+      <p class="muted" id="os-note"></p>
+      <div class="scroll-x">
+        <table class="os-table" id="os-table">
+          <tr data-os="win"><td>Windows</td><td><kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd></td></tr>
+          <tr data-os="mac"><td>macOS</td><td><kbd>Shift</kbd> + <kbd>Option</kbd> + <kbd>F</kbd></td></tr>
+          <tr data-os="linux"><td>Linux</td><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></td></tr>
+        </table>
+      </div>
+      <p style="margin-top:22px">Geen zin in sneltoetsen? Rechtermuisknop in je code en kies <strong>Document opmaken</strong>.</p>
+      <p>Wil je dat het vanzelf gebeurt? Zet in de instellingen <code>Format On Save</code> aan. Dan wordt je code elke keer netjes als je opslaat.</p>
+      <p class="muted">Het verschil tussen jou en iemand die alleen de sneltoets kent: jij ziet het meteen als de structuur niet klopt.</p>
+      <div class="row" style="justify-content:center"><button class="btn secondary" id="btn-again">Nog een keer doen</button></div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
