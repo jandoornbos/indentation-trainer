@@ -86,7 +86,10 @@ $("btn-check").addEventListener("click", () => {
     $("before-after").scrollIntoView({ block: "nearest", behavior: "smooth" });
   } else if (r.type === "content") {
     editor.markLines([r.line]);
-    feedback("bad", `<p><strong>De code zelf is veranderd bij regel ${r.line}.</strong></p><p>Je mag alleen spaties aan het begin van een regel aanpassen. Draai je wijziging terug met <kbd>Ctrl</kbd> + <kbd>Z</kbd>, of begin opnieuw met deze code.</p>`);
+    feedback("bad", `<p><strong>De code zelf is veranderd bij regel ${r.line}.</strong></p><p>Je mag alleen spaties aan het begin van een regel aanpassen en regels opsplitsen met <kbd>Enter</kbd>. Draai je wijziging terug met <kbd>Ctrl</kbd> + <kbd>Z</kbd>, of begin opnieuw met deze code.</p>`);
+  } else if (r.type === "split") {
+    editor.markLines(r.lines);
+    feedback("bad", `<p><strong>Niet alles staat op een eigen regel</strong> (regel ${r.lines.join(", ")}).</p><p>Elke CSS-eigenschap en elke tag die je opent of sluit krijgt een eigen regel. Zet de cursor op de juiste plek en druk op <kbd>Enter</kbd>.</p>`);
   } else if (r.type === "tabs") {
     editor.markLines(r.lines);
     feedback("bad", `<p><strong>Er staan tabs in plaats van spaties</strong> (regel ${r.lines.join(", ")}).</p><p>Gebruik spaties. De Tab-toets in deze editor zet automatisch 2 spaties neer.</p>`);

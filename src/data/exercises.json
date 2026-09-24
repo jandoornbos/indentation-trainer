@@ -39,9 +39,10 @@
     {
       "lang": "CSS",
       "title": "Opgave 3: twee CSS-regels",
-      "intro": "Nu CSS. De eigenschappen horen bij de selector erboven.",
+      "intro": "Nu CSS. De eigenschappen horen bij de selector erboven. Let op: ergens staan twee eigenschappen op één regel. Dat mag niet: zet ze elk op een eigen regel.",
       "hint": "De selector (body, .knop) staat links. Elke eigenschap tussen { en } 1 stap in. De } staat weer helemaal links.",
       "mess": "random",
+      "join": [2],
       "code": [
         "body {",
         "  margin: 0;",
@@ -58,9 +59,10 @@
     {
       "lang": "HTML",
       "title": "Opgave 4: een formulier",
-      "intro": "Een formulier met velden in div's. Let goed op welke sluit-tag bij welke open-tag hoort.",
+      "intro": "Een formulier met velden in div's. Let goed op welke sluit-tag bij welke open-tag hoort. Ergens wordt een div gesloten en een nieuwe geopend op dezelfde regel. Geef ze elk een eigen regel.",
       "hint": "<form> links. De div's en de button 1 stap in. Label en input staan binnen een div, dus 2 stappen in.",
       "mess": "random",
+      "join": [5],
       "code": [
         "<form action=\"verstuur.php\" method=\"post\">",
         "  <div class=\"veld\">",
