@@ -49,6 +49,7 @@ function loadExercise(i) {
   $("ex-intro").textContent = ex.intro;
   $("ex-hint").textContent = ex.hint;
   $("feedback").className = "feedback";
+  $("before-after").hidden = true;
   document.querySelector("details.hint").open = false;
   editor.setValue(state.drafts[i] != null ? state.drafts[i] : makeMessy(ex, i));
   setCheckButton(false);
@@ -79,8 +80,10 @@ $("btn-check").addEventListener("click", () => {
   if (r.type === "ok") {
     editor.markLines([]);
     feedback("good", `<p><strong>Klopt helemaal.</strong> Je hebt overal ${r.unit} spaties per stap gebruikt.</p>`);
+    showBeforeAfter(makeMessy(EXERCISES[state.ex], state.ex), editor.value);
     setCheckButton(true);
-    $("btn-check").focus();
+    $("btn-check").focus({ preventScroll: true });
+    $("before-after").scrollIntoView({ block: "nearest", behavior: "smooth" });
   } else if (r.type === "content") {
     editor.markLines([r.line]);
     feedback("bad", `<p><strong>De code zelf is veranderd bij regel ${r.line}.</strong></p><p>Je mag alleen spaties aan het begin van een regel aanpassen. Draai je wijziging terug met <kbd>Ctrl</kbd> + <kbd>Z</kbd>, of begin opnieuw met deze code.</p>`);
@@ -93,6 +96,13 @@ $("btn-check").addEventListener("click", () => {
     feedback("bad", `<p><strong>${n === 1 ? "Eén regel staat" : n + " regels staan"} nog niet goed:</strong> regel ${r.lines.join(", ")}.</p><p>Vraag je per regel af: binnen welk element (of welke <code>{ }</code>) staat deze regel? Elke stap dieper is ${r.unit} spaties extra.</p>`);
   }
 });
+
+// Oude rommelige code naast de nette versie van de leerling
+function showBeforeAfter(before, after) {
+  $("ba-before").textContent = before;
+  $("ba-after").textContent = after;
+  $("before-after").hidden = false;
+}
 
 $("btn-reset").addEventListener("click", () => {
   delete state.drafts[state.ex]; save(state);

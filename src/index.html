@@ -51,6 +51,14 @@
       <button class="btn secondary" id="btn-reset">Opnieuw beginnen met deze code</button>
     </div>
     <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+    <div class="before-after" id="before-after" hidden>
+      <h3>Zie je het verschil?</h3>
+      <p class="muted">Links de code zoals je hem kreeg, rechts jouw versie. Volg de hulplijnen: rechts staat alles wat bij elkaar hoort recht onder elkaar.</p>
+      <div class="ba-grid">
+        <figure class="ba-pane messy"><figcaption>Eerst: rommelig</figcaption><pre id="ba-before"></pre></figure>
+        <figure class="ba-pane neat"><figcaption>Nu: netjes ingesprongen</figcaption><pre id="ba-after"></pre></figure>
+      </div>
+    </div>
     <details class="hint"><summary>Ik kom er niet uit</summary><p id="ex-hint"></p></details>
   </section>
 
